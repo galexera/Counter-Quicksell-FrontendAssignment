@@ -6,7 +6,8 @@ export default function App() {
   // const [minValue, setminValue] = useState();
 
   const handlemaxValue = (event) => {
-    setmaxValue(Number(event.target.value));
+    setmaxValue(Number(Math.floor(event.target.value)));
+    // console.log(Math.floor(event.target.value));
   };
   return (
     <div className="App">
