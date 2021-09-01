@@ -2,3 +2,20 @@
   font-family: sans-serif;
   text-align: center;
 }
+#header {
+  width: 50%;
+  background-color: #b24242;
+  color: white;
+  margin: auto;
+}
+#getMaxValue {
+  margin: 50px;
+}
+
+#getMaxValue h2 {
+  color: #333;
+}
+#getMaxValue input {
+  text-align: center;
+  height: 35px;
+}

@@ -1,25 +1,37 @@
 import React, { useState } from "react";
 import "./Counter.css";
+import Popup from "./Popup";
 const Counter = ({ maxValue }) => {
   const [count, setCount] = useState(1);
+  const [isOpen, setIsOpen] = useState(false);
+  const [content, setContent] = useState(null);
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleIncrement = () => {
     if (count === maxValue) {
-      alert("Max limit reached");
+      setContent(<> Maximum limit attained</>);
+      togglePopup();
     }
     if (count < maxValue) {
       setCount((prevcount) => prevcount + 1);
     }
     if (count > maxValue) {
-      alert(`Max limit already exceeded.Set limit greater than ${count}`);
+      setContent(
+        <> Max limit already exceeded. Set limit greater than {count}</>
+      );
+      togglePopup();
     }
   };
 
   const handleDecrement = () => {
-    setCount((prevcount) => prevcount - 1);
+    if (count > 0) {
+      setCount((prevcount) => prevcount - 1);
+    }
   };
   const handleInitialValue = (event) => {
-    setCount(Number(event.target.value));
+    setCount(Number(Math.floor(event.target.value)));
   };
 
   return (
@@ -36,6 +48,9 @@ const Counter = ({ maxValue }) => {
       <button id="btnplus" onClick={handleIncrement}>
         <div id="plus-sign">+</div>
       </button>
+      {isOpen && (
+        <Popup content={content} isOpen={isOpen} setIsOpen={setIsOpen} />
+      )}
     </div>
   );
 };

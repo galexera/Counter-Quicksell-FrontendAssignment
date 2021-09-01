@@ -1,0 +1,28 @@
+#box {
+  width: 500px;
+  overflow: hidden;
+  background: #fbe8e8;
+  box-shadow: 0 0 20px black;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  padding: 10px;
+  text-align: center;
+}
+
+#box h2 {
+  color: #333;
+}
+
+#close {
+  font-size: 18px;
+  color: white;
+  background: #b24242;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+}
