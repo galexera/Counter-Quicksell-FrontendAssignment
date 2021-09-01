@@ -15,7 +15,11 @@ export default function App() {
       </div>
       <div id="getMaxValue">
         <h2>Enter max value </h2>
-        <input type="number" value={maxValue} onChange={handlemaxValue} />
+        <input
+          type="number"
+          value={maxValue.toString()}
+          onChange={handlemaxValue}
+        />
       </div>
       <div className="Counter-box">
         <Counter maxValue={maxValue} />
